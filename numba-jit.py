@@ -11,4 +11,5 @@ def monte_carlo_pi(ln: int):
             acc += 1
     return 4.0 * acc / ln
 
-print(monte_carlo_pi(1000000000))
+if __name__ == "__main__":
+    print(monte_carlo_pi(1000000000))
