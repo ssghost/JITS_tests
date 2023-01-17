@@ -1,6 +1,5 @@
 import triton
 import triton.language as tl
-import random
 
 @triton.jit
 def monte_carlo_pi(ln: int):
