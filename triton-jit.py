@@ -1,6 +1,8 @@
 import triton
 import triton.language as tl
+from . import benchmark
 
+@benchmark
 @triton.jit
 def monte_carlo_pi(ln: int):
     offset = tl.arange(ln)
