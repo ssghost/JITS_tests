@@ -8,7 +8,7 @@ def benchmark_accuracy(func: Callable[..., Any]) -> Callable[..., Any]:
     def wrapper(*args: Any, **kwargs: Any) -> Any:
         value = func(*args, **kwargs)
         accuracy = 1.-abs(math.pi - value)/math.pi
-        logging.info(f"Execution of {func.__name__} has an accuracy of {accuracy:.2f}.")
+        logging.info(f"Execution of {func.__name__} has an accuracy of {accuracy:.3f}.")
         return value
 
     return wrapper
