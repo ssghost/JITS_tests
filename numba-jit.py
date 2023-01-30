@@ -1,8 +1,9 @@
 import numba
 import random
-from . import benchmark
+from . import benchmark_time, benchmark_accuracy
 
-@benchmark
+@benchmark_time
+@benchmark_accuracy
 @numba.jit
 def monte_carlo_pi(ln: int):
     acc = 0

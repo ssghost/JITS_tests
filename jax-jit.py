@@ -1,8 +1,9 @@
 import jax
 import jax.numpy as jnp
-from . import benchmark
+from . import benchmark_time, benchmark_accuracy
 
-@benchmark
+@benchmark_time
+@benchmark_accuracy
 @jax.jit
 def monte_carlo_pi(ln: int):
     keyx = jax.random.PRNGKey(111111)

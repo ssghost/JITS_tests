@@ -1,8 +1,9 @@
 import tensorflow as tf 
 import numpy as np
-from . import benchmark
+from . import benchmark_time, benchmark_accuracy
 
-@benchmark
+@benchmark_time
+@benchmark_accuracy
 @tf.function(jit_compile=True)
 def monte_carlo_pi(ln: int):
     seedx = tf.random.set_seed(111111)

@@ -3,7 +3,7 @@ import functools
 from time import perf_counter
 from typing import Any, Callable
 
-def benchmark(func: Callable[..., Any]) -> Callable[..., Any]:
+def benchmark_time(func: Callable[..., Any]) -> Callable[..., Any]:
     @functools.wraps(func)
     def wrapper(*args: Any, **kwargs: Any) -> Any:
         start_time = perf_counter()
