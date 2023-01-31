@@ -1,6 +1,7 @@
 import numba
 import random
-from . import benchmark_time, benchmark_accuracy
+from .benchmark_time import benchmark_time 
+from .benchmark_accuracy import benchmark_accuracy
 
 @benchmark_time
 @benchmark_accuracy
@@ -16,3 +17,4 @@ def monte_carlo_pi(ln: int):
 
 if __name__ == "__main__":
     print(monte_carlo_pi(1000000000))
+    
