@@ -1,10 +1,11 @@
 import numba
 import random
-from .benchmark_time import benchmark_time 
-from .benchmark_accuracy import benchmark_accuracy
+import numpy as np
+from .benchmarks import bench_time 
+from .benchmarks import bench_accuracy
 
-@benchmark_time
-@benchmark_accuracy
+@bench_time
+@bench_accuracy
 @numba.jit
 def monte_carlo_pi(ln: int):
     acc = 0
@@ -15,6 +16,10 @@ def monte_carlo_pi(ln: int):
             acc += 1
     return 4.0 * acc / ln
 
+def main() -> None:
+    for i in np.logspace(start = 5, stop = 9, num = 5):
+        print(monte_carlo_pi(i))
+
 if __name__ == "__main__":
-    print(monte_carlo_pi(1000000000))
+    main()
     
